@@ -22,4 +22,5 @@ public class Platform implements Serializable {
 
     private String test1;       //测试1·
     private String test2;       //测试2
+    private String test5;       //测试5
 }
