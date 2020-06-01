@@ -19,4 +19,7 @@ public class Platform implements Serializable {
     private Date updateTime;
     private String createBy;
     private List<PlatformMenu> platformMenuList;
+
+    private String test1;       //测试1·
+    private String test2;       //测试2
 }
