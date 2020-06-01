@@ -23,6 +23,7 @@ public class Platform implements Serializable {
     private String test1;       //测试1·
     private String test2;       //是对的，不要改
     private String test3;       //测试3·
+    private String test4;       //我才是真正的测试4
 
     @Override
     public String toString() {
