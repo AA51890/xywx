@@ -17,4 +17,9 @@ public class PlatformController {
     public List<Platform> queryAll(){
         return  platformService.queryAll();
     }
+
+    @RequestMapping("/queryAllMenus")
+    public List<Platform> queryAllMenus(){
+        return  platformService.queryAllMenus();
+    }
 }

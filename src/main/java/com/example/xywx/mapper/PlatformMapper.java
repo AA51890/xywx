@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface PlatformMapper {
     List<Platform> queryAll();
+
+    List<Platform> queryAllMenus();
 }

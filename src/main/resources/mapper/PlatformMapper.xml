@@ -2,11 +2,44 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.xywx.mapper.PlatformMapper">
 
+    <resultMap type="platform" id="platformMenuMap">
+        <id column="PLATFORM_ID" property="platformId"/>
+        <result column="PLATFORM_CODE" property="platformCode"/>
+        <collection property="platformMenuList" ofType="PlatformMenu" >
+            <id column="MENU_ID" property="menuId"/>
+            <result column="PARENT_MENU_ID" property="platformId"/>
+            <result column="PLATFORM_ID" property="parentMenuId"/>
+            <result column="PARENT_MENU_CODE" property="parentMenuCode"/>
+            <result column="PARENT_MENU_NAME" property="parentMenuName"/>
+            <result column="MENU_CODE" property="menuCode"/>
+            <result column="MENU_NAME" property="menuName"/>
+        </collection>
+    </resultMap>
+
+    <select id="queryAllMenus" resultMap="platformMenuMap">
+		SELECT
+			t1.PLATFORM_ID,
+			t1.PLATFORM_CODE,
+			t1.PLATFORM_NAME,
+			t2.MENU_ID,
+			t2.PLATFORM_ID,
+			t2.PARENT_MENU_ID,
+			t2.PARENT_MENU_CODE,
+			t2.PARENT_MENU_NAME,
+			t2.MENU_CODE,
+			t2.MENU_NAME
+		FROM
+			TB_PLATFORM t1
+			LEFT JOIN TB_PLATFORM_MENU t2 ON t1.PLATFORM_ID = t2.PLATFORM_ID;
+	</select>
+
+
     <select id="queryAll" resultType="Platform">
         SELECT
             *
         FROM
             TB_PLATFORM
     </select>
+
 
 </mapper>

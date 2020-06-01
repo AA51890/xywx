@@ -15,4 +15,8 @@ public class PlatformService {
     public List<Platform> queryAll(){
         return  platformMapper.queryAll();
     }
+
+    public List<Platform> queryAllMenus(){
+        return  platformMapper.queryAllMenus();
+    }
 }

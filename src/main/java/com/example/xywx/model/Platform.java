@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class Platform implements Serializable {
@@ -17,5 +18,5 @@ public class Platform implements Serializable {
     private Date createTime;
     private Date updateTime;
     private String createBy;
-
+    private List<PlatformMenu> platformMenuList;
 }
