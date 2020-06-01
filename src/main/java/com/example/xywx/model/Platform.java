@@ -21,5 +21,6 @@ public class Platform implements Serializable {
     private List<PlatformMenu> platformMenuList;
 
     private String test1;       //测试1·
+    private String test3;       //测试3·
 
 }
