@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.xywx.mapper.LabelMapper">
+    <insert id="saveLabel" parameterType="label">
+        INSERT INTO  TB_LABEL (LABEL_ID,
+        LABEL_CODE,
+        LABEL_NAME,
+        LABEL_TYPE,
+        LABEL_AUTH,
+        LABEL_STATUS,
+        QUOTE_NUMS,
+        CREATE_TIME,
+        CREATE_BY,
+        UPDATE_TIME,
+        UPDATE_BY
+        )
+        VALUES (
+          #{labelId,jdbcType=INTEGER},
+          #{labelCode,jdbcType=INTEGER},
+          #{labelName,jdbcType=VARCHAR},
+          #{labelType,jdbcType=VARCHAR},
+          #{labelAuth,jdbcType=VARCHAR},
+          #{labelStatus,jdbcType=VARCHAR},
+          #{quoteNums,jdbcType=INTEGER},
+          #{createTime,jdbcType=TIMESTAMP},
+          #{createBy,jdbcType=VARCHAR},
+          #{updateTime,jdbcType=TIMESTAMP},
+          #{updateBy,jdbcType=VARCHAR}
+        )
+    </insert>
+
+</mapper>
